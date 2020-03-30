@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import SignUp from './components/Auth/signUp-In';
 
-class App extends Component{
+class Home extends Component {
   render(){
     return (
-      <div className='App'>
-        Geek Notes
+      <div className='Home'>
+         <SignUp/>
       </div>
     );
   }
 }
 
-export default App;
+export default Home;
