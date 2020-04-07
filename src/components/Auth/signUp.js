@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-/*------------------> SIGN UP <--------------------*/
+/*------------------> SIG(N UP <--------------------*/
 class SignUp extends Component {
     constructor(props){
         super(props);
@@ -28,14 +28,14 @@ class SignUp extends Component {
         let nameError = '';
         let emailError = '';
         let passwordError = '';
+        let emailRegEx = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
         if (!this.state.name){
             nameError = 'Name cannot be empty';
         }
 
-        if (!this.state.email.includes('@')){
-            emailError = 'Wrong E-mail';
-
+        if (!this.state.email.match(emailRegEx)){
+            emailError = 'Invalid E-mail';
         }
         if (!this.state.password) {
             passwordError = 'Password cannot be empty';
@@ -59,7 +59,7 @@ class SignUp extends Component {
         event.preventDefault();
         const resetState ={
             name: '',
-            email: '', //esta mandando este email! D:
+            email: '',
             password: '',
             nameError: '',
             emailError: '',

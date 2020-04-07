@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import SignUp from './components/Auth/signUp';
-import SignIn from './components/Auth/signIn';
+/*import './App.css';*/
+import SignUp from '../components/Auth/signUp';
+import SignIn from '../components/Auth/signIn';
 
 
 class Home extends Component {

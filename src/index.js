@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 import * as serviceWorker from './serviceWorker';
-import Home from './App';
-import MainPage from './components/Auth/mainPage';
-import Trash from './components/Auth/delete';
+import Home from './controllers/home';
+import MainPage from './controllers/mainPage';
+import Trash from './controllers/delete';
 import './index.css';
 
 ReactDOM.render(

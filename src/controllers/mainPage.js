@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Notes from '../components/Notes/notes';
 
 export default class MainPage extends Component {
   render() {
     return (
       <div>
-        <h1>Hola, Bienvenido a tu Inicio de Geek Notes</h1>
+        <Notes/>
       </div>
     );
   }
