@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import './styles/notes.css';
 import NotesComponent from './notesComponent';
+import AddNotes from './addNotes';
 
 class Notes extends Component{
     constructor (props){
@@ -12,7 +13,24 @@ class Notes extends Component{
                 {noteId: 3, noteContent: 'note Test #3'},
             ]
         };
+        this.saveNote = this.saveNote.bind(this);
     }
+
+    deleteNote() {
+
+    }
+
+    saveNote(note) {
+        let { notes } = this.state;
+        notes.push({
+            noteId: notes.length +1,
+            noteContent: note
+        }); 
+
+        this.setState({ notes });
+
+    }
+
     render(){
         return (
             <div className ='notesApp'>
@@ -38,6 +56,7 @@ class Notes extends Component{
                 </ul>
                 <div className = 'addNotes'>
                     <h1>Agregar nota</h1>
+                    <AddNotes saveNote={this.saveNote}/>
                 </div>
             </div>
             <div className = 'userOptions'>
