@@ -1,3 +1,6 @@
+import firebase from 'firebase';
+import  { DATABASE_CONFIG } from './FirebaseConfig/firebaseConfig.js';
+import 'firebase/database';
 import React, { Component } from 'react';
 //import './styles/notes.css';
 import NotesComponent from './notesComponent';
@@ -7,24 +10,45 @@ class Notes extends Component{
     constructor (props){
         super (props);
         this.state = {
-            notes: []
+            notes: [
+
+            ]
         };
+
+        this.geekNotes = firebase.initializeApp(DATABASE_CONFIG);
+        this.dataBase = this.geekNotes.database().ref().child('notes');
         this.saveNote = this.saveNote.bind(this);
+        this.deleteNote = this.deleteNote.bind(this);
+    }
+ //Se encarga de cargar los datos dentro del estado//
+    componentDidMount() {
+        const { notes } = this.state;
+        this.dataBase.on('child_added', snap => {
+            notes.push({
+                noteId: snap.key,
+                noteName: snap.val().noteName,
+                noteContent: snap.val().noteContent
+            })
+            this.setState({ notes });
+        });
+
+        this.dataBase.on('child_removed', snap => {
+            for(let i = 0; i < notes.length; i++){
+                if(notes[i].noteId = snap.key) {
+                    notes.splice(i, 1);
+                }
+            }
+            this.setState({ notes });
+        });
     }
 
-    deleteNote() {
-
+    deleteNote(noteId) {
+        this.dataBase.child(noteId).remove();
     }
 
     saveNote(note) {
-        let { notes } = this.state;
-        notes.push({
-            noteId: notes.length +1,
-            noteName: note,
-            noteContent: note
-        }); 
-
-        this.setState({ notes });
+        
+        this.dataBase.push().set({ noteContent: note});
 
     }
 
@@ -47,6 +71,7 @@ class Notes extends Component{
                             noteContent = {note.noteContent}
                             noteId = {note.noteId}
                             key = {note.noteId}
+                            deleteNote = {this.deleteNote}
                             />
                         )
                     })

@@ -9,8 +9,11 @@ class NotesComponent extends Component{
     }
 
     handleRemove(id){
-        alert('remove Note: ' + id)
-
+        const response = window.confirm('Do you want delete this note?');
+        if(response) {
+        this.props.deleteNote(id);
+        }
+        return;
     }
 
     render() {
