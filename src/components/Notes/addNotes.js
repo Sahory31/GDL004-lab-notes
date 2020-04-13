@@ -13,9 +13,11 @@ class AddNotes extends Component{
     }
 
     saveNote (){
+        this.props.saveNote(this.noteName.value);
         this.props.saveNote(this.noteInput.value);
+        this.noteName.value = '';
         this.noteInput.value = '';
-        
+
     }
 
     render(){
@@ -26,14 +28,14 @@ class AddNotes extends Component{
             onClick={() => this.handleChange(true)}>Write a Note</button>
         </div>
         <div className ='hiddenAddNoteWindow' hidden={this.state.checked ? false : true}>
-            <div className = 'nameNotes'>
-                <input 
+            <div className = 'writeNote'>
+            <input 
+                ref={input => {this.noteName = input;}}
                 type = 'text' 
                 className='nameNotes' 
                 placeholder = 'Write the name of your note'>
                 </input>
-            </div>
-            <div className = 'writeNote'>
+                <p/>
                 <input
                 ref={input => {this.noteInput = input;}}
                 type = 'text'
