@@ -7,11 +7,7 @@ class Notes extends Component{
     constructor (props){
         super (props);
         this.state = {
-            notes: [
-                {noteId: 1, noteContent: 'note Test #1'},
-                {noteId: 2, noteContent: 'note Test #2'},
-                {noteId: 3, noteContent: 'note Test #3'},
-            ]
+            notes: []
         };
         this.saveNote = this.saveNote.bind(this);
     }
@@ -24,6 +20,7 @@ class Notes extends Component{
         let { notes } = this.state;
         notes.push({
             noteId: notes.length +1,
+            noteName: note,
             noteContent: note
         }); 
 
@@ -46,6 +43,7 @@ class Notes extends Component{
                     this.state.notes.map(note => {
                         return(
                             <NotesComponent 
+                            noteName = {note.noteName}
                             noteContent = {note.noteContent}
                             noteId = {note.noteId}
                             key = {note.noteId}

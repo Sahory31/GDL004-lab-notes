@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 class NotesComponent extends Component{
     constructor(props){
         super(props);
+        this.noteName = props.noteName;
         this.noteContent = props.noteContent;
         this.noteId = props.noteId;
     }
