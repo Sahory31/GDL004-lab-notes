@@ -4,7 +4,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import * as serviceWorker from './serviceWorker';
 import Home from './controllers/home';
 import MainPage from './controllers/mainPage';
-import Trash from './controllers/delete';
+import Trash from './controllers/deleted';
 import './index.css';
 
 ReactDOM.render(
