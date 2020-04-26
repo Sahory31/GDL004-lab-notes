@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import  { DATABASE_CONFIG } from '../Notes/FirebaseConfig/firebaseConfig';
 
-/*------------------> SIG(N UP <--------------------*/
+/*------------------> SIGN UP <--------------------*/
 class SignUp extends Component {
     constructor(props){
         super(props);
@@ -23,6 +24,7 @@ class SignUp extends Component {
             : event.target.value
         });
     };
+    
 
     validate = () =>{
         let nameError = '';
