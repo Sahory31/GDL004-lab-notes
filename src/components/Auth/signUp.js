@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  { DATABASE_CONFIG } from '../Notes/FirebaseConfig/firebaseConfig';
+
 
 /*------------------> SIGN UP <--------------------*/
 class SignUp extends Component {
@@ -83,14 +83,15 @@ class SignUp extends Component {
     return (
       <div className="Auth">
           <div className="signUp-form">
-              <h1>Sign Up</h1>
+              <h1 className="signUpTitle">Sign Up</h1>
               <form>
                   <div className="name">
-                      <label htmlFor="name">Name </label>
+                      <label htmlFor="name">Name: </label>
                       <input 
                       value={this.state.name} //valor del estado
                       type="text" 
                       placeholder="name" 
+                      className="name"
                       name="name" 
                       noValidate
                       onChange={this.handleChange}
@@ -103,6 +104,7 @@ class SignUp extends Component {
                       value={this.state.email}
                       type="email" 
                       placeholder="e-mail@" 
+                      className="email"
                       name="email" 
                       noValidate
                       onChange={this.handleChange}
@@ -113,7 +115,8 @@ class SignUp extends Component {
                       <label htmlFor="password">Password </label>
                       <input 
                       value={this.state.password}
-                      type="password"  
+                      type="password" 
+                      className="password" 
                       placeholder="password" 
                       name="password" 
                       noValidate
@@ -122,11 +125,10 @@ class SignUp extends Component {
                       <div>{this.state.passwordError}</div>
                   </div>
                   <div className="createAccount">
-                    <button onClick={this.handleSubmit}> Create Account </button>
+                    <button onClick={this.handleSubmit} className='signUpBtn'> Create Account </button>
                     <p/>
-                    <small>Already have an Account?</small> 
-                    <p/>
-                    <small>Forgot the password?</small>
+                    <div>Already have an Account?</div> 
+                    <div>Forgot the password?</div>
                   </div>
               </form>
           </div>

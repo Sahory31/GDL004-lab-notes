@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+
+
 /*------------------> SIGN IN <--------------------*/
 class SignIn extends Component {
     constructor(props){
@@ -65,16 +67,18 @@ class SignIn extends Component {
   render() {
     return (
       <div className="Auth">
+          <link rel="stylesheet" href='Styles/Images/fonts/style.css'></link>
           <div className="signIn-form">
-              <h1>Sign In</h1>
+              <h1 className='signInTitle'>Sign In</h1>
               <form>
                   <div className="email">
-                      <label htmlFor="email">E-mail </label>
+                      <label htmlFor="email">E-mail</label>
                       <input 
                       value={this.state.email}
                       type="email" 
                       placeholder="e-mail@" 
-                      name="email" 
+                      className="email"
+                      name="email"
                       noValidate
                       onChange={this.handleChange}
                       />
@@ -84,7 +88,8 @@ class SignIn extends Component {
                       <label htmlFor="password">Password </label>
                       <input 
                       value={this.state.password}
-                      type="password"  
+                      type="password" 
+                      className="password" 
                       placeholder="password" 
                       name="password" 
                       noValidate
@@ -93,11 +98,10 @@ class SignIn extends Component {
                       <div>{this.state.passwordError}</div>
                   </div>
                   <div className="logIn">
-                    <button onClick={this.handleSubmit}> Log In </button>
+                    <button onClick={this.handleSubmit} className='signInBtn'> Log In </button>
                     <p/>
-                    <small>Don't have an Account yet?</small>
-                    <p/>
-                    <small>Forgot the password?</small>
+                    <div className='questionAccount'>Don't have an Account yet?</div> 
+                    <div className='forgotPass'>Forgot the password?</div>
                   </div>
               </form>
           </div>

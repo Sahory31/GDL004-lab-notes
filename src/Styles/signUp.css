@@ -1,0 +1,107 @@
+@media (min-width: 600px) and (max-width: 800px) {
+        
+    .Home{
+        position: relative;
+    }
+    .geekNotes{
+        position: none;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 80px;
+        line-height: 13px;
+        text-align: center;
+        /* identical to box height */
+        color: #0EA6A6;
+        -webkit-text-stroke: 3px black;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .signUp-form, .signIn-form{
+        /*position: absolute; left: 0px; top: 100px;*/
+        background-color: lightsteelblue;
+        opacity: 0.7;
+        border-radius: 15px;
+        width: 300px;
+        height: 300px;
+        margin-left: 30%;
+        border: 3px solid #000000;
+    }   
+
+    h1{
+        text-align: center;
+        color: rgb(6, 6, 7);
+        -webkit-text-stroke: 0.1px rgb(8, 129, 181);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .signUpTitle, .signInTitle{
+        margin-top: 0;
+        width: 300px;
+        height: 40px;
+        text-align: center;
+        color: rgb(6, 6, 7);
+        -webkit-text-stroke: 0.1px rgb(8, 129, 181);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .name{
+        font-weight: bold;
+        border-radius: 15px;
+        text-align: center;
+        border: 1px dotted #999;
+        width : 295px;
+        margin: 0;
+    }
+
+    .email{
+        font-weight: bold;
+        border-radius: 15px;
+        text-align: center;
+        border: 1px dotted #999;
+        width : 295px;
+        margin: 0;
+    }
+
+    .password{
+        font-weight: bold;
+        border-radius: 15px;
+        text-align: center;
+        border: 1px dotted #999;
+        width : 295px;
+        margin: 0;
+        
+    }
+
+    .signUpBtn, .signInBtn{
+        text-decoration: none;
+        padding: 2px;
+        font-weight: 200;
+        font-size: 15px;
+        color: #0c0c0c;
+        background-color: #1883ba;
+        border-radius: 6px;
+        border: 2px solid #0016b0;
+        font-family: 'Schoolbell', cursive;
+        font-weight: bold;
+    }
+
+    .logIn, .createAccount{
+        text-align: center;
+        margin-top: 5%;
+    }
+    
+    .mailIcon{
+        color: black;
+    }
+    
+    .logIn, .createAccount{
+        display: inline-block;
+        color: deeppink;
+        font-weight: bold;
+        font-size: 10px;
+        align-content: center;
+        width: 300px;
+        height: 100px;
+        white-space: nowrap;
+    }
+}
