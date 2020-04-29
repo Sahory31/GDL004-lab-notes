@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import Home from './controllers/home';
 import MainPage from './controllers/mainPage';
 import Trash from './controllers/deleted';
-import './index.css';
+import './Styles/index.css';
 
 ReactDOM.render(
   <Router history={browserHistory}> 
