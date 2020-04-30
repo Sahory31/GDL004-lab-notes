@@ -13,6 +13,7 @@ class SignUp extends Component {
             emailError: '',
             passwordError: ''
         }
+        this.state ={ checked : true }
     }
 
  //Controlador de cambios, lee el nombre del campo y actualiza el estado con él
@@ -24,6 +25,10 @@ class SignUp extends Component {
             : event.target.value
         });
     };
+
+    handleChangeChecked(checked){
+        this.setState({checked});
+    }
     
 
     validate = () =>{
@@ -81,7 +86,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="Auth">
+      <div className="Auth" hidden={this.state.checked ? false : true}>
           <div className="signUp-form">
               <h1 className="signUpTitle">Sign Up</h1>
               <form>
@@ -96,7 +101,7 @@ class SignUp extends Component {
                       noValidate
                       onChange={this.handleChange}
                       />
-                      <div>{this.state.nameError}</div>
+                      <div className='nameError'>{this.state.nameError}</div>
                   </div>
                   <div className="email">
                       <label htmlFor="email">E-mail </label>
@@ -109,7 +114,7 @@ class SignUp extends Component {
                       noValidate
                       onChange={this.handleChange}
                       />
-                      <div>{this.state.emailError}</div>
+                      <div className='emailError'>{this.state.emailError}</div>
                   </div>
                   <div className="password">
                       <label htmlFor="password">Password </label>
@@ -122,12 +127,12 @@ class SignUp extends Component {
                       noValidate
                       onChange={this.handleChange}
                       />
-                      <div>{this.state.passwordError}</div>
+                      <div className='passwordError'>{this.state.passwordError}</div>
                   </div>
                   <div className="createAccount">
                     <button onClick={this.handleSubmit} className='signUpBtn'> Create Account </button>
                     <p/>
-                    <div>Already have an Account?</div> 
+                    <div onClick={() => this.handleChangeChecked(false)}>Already have an Account?</div> 
                     <div>Forgot the password?</div>
                   </div>
               </form>

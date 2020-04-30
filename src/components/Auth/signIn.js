@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-
 /*------------------> SIGN IN <--------------------*/
 class SignIn extends Component {
     constructor(props){
@@ -12,6 +10,8 @@ class SignIn extends Component {
             emailError: '',
             passwordError: ''
         }
+        this.state = { checked : false}
+
     }
 
  //Controlador de cambios, lee el nombre del campo y actualiza el estado con él
@@ -24,16 +24,29 @@ class SignIn extends Component {
         });
     };
 
+    handleChangeChecked(checked){
+        this.setState({checked});
+    }
+
     validate = () =>{
         let emailError = '';
         let passwordError = '';
+        let emailRegEx = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
-        if (!this.state.email.includes('@')){
-            emailError = 'Wrong E-mail';
+        if (!this.state.email.match(emailRegEx)){
+            emailError = 'Invalid E-mail';
         }
 
-        if (this.state.password < 6){
-            passwordError = 'Password requires at least 6 characters'
+        if (this.state.password.length < 6) {
+            passwordError = 'Password required at least 6 characters';
+        }
+
+        if (!this.state.password) {
+            passwordError = 'Password cannot be empty';
+        }
+
+        if (this.state.password.includes(' ')) {
+            passwordError = 'Password cannot have spaces';
         }
 
         if (emailError || passwordError){
@@ -66,7 +79,7 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="Auth">
+      <div className="Auth" hidden={this.state.checked ? false : true}>
           <link rel="stylesheet" href='Styles/Images/fonts/style.css'></link>
           <div className="signIn-form">
               <h1 className='signInTitle'>Sign In</h1>
@@ -82,7 +95,7 @@ class SignIn extends Component {
                       noValidate
                       onChange={this.handleChange}
                       />
-                      <div>{this.state.emailError}</div>
+                      <div className='emailError'>{this.state.emailError}</div>
                   </div>
                   <div className="password">
                       <label htmlFor="password">Password </label>
@@ -95,13 +108,13 @@ class SignIn extends Component {
                       noValidate
                       onChange={this.handleChange}
                       />
-                      <div>{this.state.passwordError}</div>
+                      <div className='passwordError'>{this.state.passwordError}</div>
                   </div>
                   <div className="logIn">
                     <button onClick={this.handleSubmit} className='signInBtn'> Log In </button>
                     <p/>
-                    <div className='questionAccount'>Don't have an Account yet?</div> 
-                    <div className='forgotPass'>Forgot the password?</div>
+                    <div onClick={() => this.handleChangeChecked(true)}>Don't have an Account yet?</div> 
+                    <div>Forgot the password?</div>
                   </div>
               </form>
           </div>
