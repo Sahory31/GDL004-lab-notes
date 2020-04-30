@@ -48,7 +48,6 @@
         font-weight: bold;
         border-radius: 15px;
         text-align: center;
-        border: 1px dotted #999;
         width : 295px;
         margin: 0;
     }
@@ -57,7 +56,6 @@
         font-weight: bold;
         border-radius: 15px;
         text-align: center;
-        border: 1px dotted #999;
         width : 295px;
         margin: 0;
     }
@@ -66,7 +64,6 @@
         font-weight: bold;
         border-radius: 15px;
         text-align: center;
-        border: 1px dotted #999;
         width : 295px;
         margin: 0;
         
@@ -90,18 +87,28 @@
         margin-top: 5%;
     }
     
-    .mailIcon{
-        color: black;
-    }
-    
     .logIn, .createAccount{
         display: inline-block;
-        color: deeppink;
+        color: rgb(13, 2, 72);
         font-weight: bold;
         font-size: 10px;
         align-content: center;
         width: 300px;
         height: 100px;
         white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .nameError, .passwordError, .emailError{
+        color: rgb(255, 255, 255) ;
+        width: 80px;
+        background-color: rgba(181, 2, 2, 0.836);
+        text-align: center;
+        border-radius: 4px;
+        padding: 0px 0;
+        position: absolute;
+        border-color: rgb(1, 1, 27);
+        border: .5px solid #000000;
+        font-size: 12px;
     }
 }
