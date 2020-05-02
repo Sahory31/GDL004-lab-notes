@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/GDL004-lab-notes/static/css/main.3ff51c66.chunk.css",
+    "main.js": "/GDL004-lab-notes/static/js/main.1d5b3e34.chunk.js",
+    "main.js.map": "/GDL004-lab-notes/static/js/main.1d5b3e34.chunk.js.map",
+    "runtime-main.js": "/GDL004-lab-notes/static/js/runtime-main.80d52ec4.js",
+    "runtime-main.js.map": "/GDL004-lab-notes/static/js/runtime-main.80d52ec4.js.map",
+    "static/js/2.a7e38473.chunk.js": "/GDL004-lab-notes/static/js/2.a7e38473.chunk.js",
+    "static/js/2.a7e38473.chunk.js.map": "/GDL004-lab-notes/static/js/2.a7e38473.chunk.js.map",
+    "index.html": "/GDL004-lab-notes/index.html",
+    "precache-manifest.d5a30f4984a25ba702b2fac71f0ceca6.js": "/GDL004-lab-notes/precache-manifest.d5a30f4984a25ba702b2fac71f0ceca6.js",
+    "service-worker.js": "/GDL004-lab-notes/service-worker.js",
+    "static/css/main.3ff51c66.chunk.css.map": "/GDL004-lab-notes/static/css/main.3ff51c66.chunk.css.map",
+    "static/js/2.a7e38473.chunk.js.LICENSE.txt": "/GDL004-lab-notes/static/js/2.a7e38473.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/GDL004-lab-notes/static/media/backgroundStart.756a1e2b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80d52ec4.js",
+    "static/js/2.a7e38473.chunk.js",
+    "static/css/main.3ff51c66.chunk.css",
+    "static/js/main.1d5b3e34.chunk.js"
+  ]
+}
