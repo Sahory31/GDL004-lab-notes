@@ -80,7 +80,6 @@ class SignIn extends Component {
   render() {
     return (
       <div className="Auth" hidden={this.state.checked ? false : true}>
-          <link rel="stylesheet" href='Styles/Images/fonts/style.css'></link>
           <div className="signIn-form">
               <h1 className='signInTitle'>Sign In</h1>
               <form>

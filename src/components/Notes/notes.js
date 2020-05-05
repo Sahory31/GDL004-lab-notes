@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import  { DATABASE_CONFIG } from './FirebaseConfig/firebaseConfig.js';
 import 'firebase/database';
 import React, { Component } from 'react';
@@ -34,7 +34,7 @@ class Notes extends Component{
 
         this.dataBase.on('child_removed', snap => {
             for(let i = 0; i < notes.length; i++){
-                if(notes[i].noteId = snap.key) {
+                if(notes[i].noteId === snap.key) {
                     notes.splice(i, 1);
                 }
             }
