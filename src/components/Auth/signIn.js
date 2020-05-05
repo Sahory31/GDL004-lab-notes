@@ -81,7 +81,7 @@ class SignIn extends Component {
     return (
       <div className="Auth" hidden={this.state.checked ? false : true}>
           <div className="signIn-form">
-              <h1 className='signInTitle'>Sign In</h1>
+              <h1 className='signInTitle'>Sign oon</h1>
               <form>
                   <div className="email">
                       <label htmlFor="email">E-mail</label>
