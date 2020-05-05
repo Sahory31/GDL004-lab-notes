@@ -12,17 +12,22 @@
     "react-dom": "^16.13.1",
     "react-firebaseui": "^4.1.0",
     "react-router": "^3.2.6",
-    "react-scripts": "3.4.1"
-  },
+    "react-scripts": "3.4.1",
+    "serve": "11.3.0"
+    },
   "scripts": {
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build -x false",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prod": "serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "engines": {
+    "node": "10.x"
   },
   "browserslist": {
     "production": [
